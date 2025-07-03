@@ -17,6 +17,8 @@ int main() {
     int numPontosTuristicos;
     // Cadastro das Cartas:
     //Pedindo para o usuario entrar com os dados da carta
+    // Dados da Carta 1
+    printf("Digite os dados da carta 1\n");
     printf("Digite o codigo da cidade: ");
         scanf("%s", codigodaCidade);
     printf("Digite o nome da cidade: \n");
@@ -29,6 +31,31 @@ int main() {
             scanf("%f", &pib);
     printf("Digite o numero de pontos turisticos: ");
             scanf("%i", &numPontosTuristicos);
+
+    // Dados da Carta 2
+    printf("Digite os dados da carta 2\n");
+    printf("Digite o codigo da cidade: ");
+        scanf("%s", codigodaCidade);
+    printf("Digite o nome da cidade: \n");
+        scanf("%s", nomedaCidade);
+    printf("Digite a populacao: \n");
+        scanf("%i", &populacao);
+    printf("Digite a area: \n");
+        scanf("%f", &area);
+    printf("Digite o PIB: \n");
+            scanf("%f", &pib);
+    printf("Digite o numero de pontos turisticos: ");
+            scanf("%i", &numPontosTuristicos);
+
+
+
+
+
+
+
+
+
+
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     
