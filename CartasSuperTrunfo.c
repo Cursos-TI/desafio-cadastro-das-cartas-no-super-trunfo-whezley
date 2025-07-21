@@ -150,7 +150,8 @@ int main() {
         }
         //Codigo para implementar a comparacao de cartas usando o switch
         int atributo;
-        unsigned long int soma2atributos;
+        unsigned long int somaatributos = 0;
+        unsigned long int somaatributos2 = 0;
         printf("\nComparando as cartas usando switch\n");
         printf("Escolha um atributo para comparar:\n");
         printf("1 - Populacao\n");
@@ -166,31 +167,42 @@ int main() {
         // Loop para permitir que o usuário escolha o atributo a ser comparado
         //Sera executado duas vezes para comparar 2 atributos das cartas
     for(int i = 0; i <= 1; i++) {
-        printf("Qual atributo voce deseja comparar?: \n");
+       
+        printf("Qual o %d atributo?: \n",i+1);
         scanf("%d", &atributo);
-        
+    
         switch(atributo) {
                 
         case 1: //Codigo para implementar a comparacao de cartas usando o if/else
             printf("\nComparando as cartas usanso if/else\n");
             populacao == populacao2 ? "As cartas sao iguais. Houve empate" : "As cartas sao diferentes. Houve vitoria";
             if (populacao > populacao2) {
+                somaatributos += populacao;
+                somaatributos2 += populacao2;
                 printf("Carta 1 - %s: %li\n", nomedaCidade, populacao);
                 printf("Carta 2 - %s: %li\n", nomedaCidade2, populacao2);
                 printf("Carta 1(%s) venceu na populacao.\n\n", nomedaCidade);
-            
-            }else{printf("Carta 1 - %s: %li\n", nomedaCidade, populacao);
+                
+            }else{
+                somaatributos += populacao;
+                somaatributos2 += populacao2;
+                printf("Carta 1 - %s: %li\n", nomedaCidade, populacao);
                 printf("Carta 2 - %s: %li\n", nomedaCidade2, populacao2);
-                printf("Carta 2 venceu na populacao.\n\n");};
+                printf("Carta 2 venceu na populacao.\n\n");
+                };
                
             break;
         case 2:
         area == area2 ? "As cartas sao iguais. Houve empate" : "As cartas sao diferentes. Houve vitoria";
             if(area > area2) {
+                somaatributos += area;
+                somaatributos2 += area2;
                 printf("Carta 1 - %s: %.2f\n", nomedaCidade, area);
                 printf("Carta 2 - %s: %.2f\n", nomedaCidade2, area2);
                 printf("Carta 1 venceu na area.\n\n");
             }else{
+                somaatributos += area;
+                somaatributos2 += area2;
                 printf("Carta 1 - %s: %.2f\n", nomedaCidade, area);
                 printf("Carta 2 - %s: %.2f\n", nomedaCidade2, area2);
                 printf("Carta 2 venceu na area.\n\n");};
@@ -198,10 +210,14 @@ int main() {
         case 3:
             pib == pib2 ? "As cartas sao iguais. Houve empate" : "As cartas sao diferentes. Houve vitoria";
             if(pib > pib2) {
+                somaatributos += pib;
+                somaatributos2 += pib2;
                 printf("Carta 1 - %s: %.2f\n", nomedaCidade, pib);
                 printf("Carta 2 - %s: %.2f\n", nomedaCidade2, pib2);
                 printf("Carta 1 venceu no PIB.\n\n");
             }else{
+                somaatributos += pib;
+                somaatributos2 += pib2;
                 printf("Carta 1 - %s: %.2f\n", nomedaCidade, pib);
                 printf("Carta 2 - %s: %.2f\n", nomedaCidade2, pib2);
                 printf("Carta 2 venceu no PIB.\n\n");};
@@ -209,10 +225,14 @@ int main() {
         case 4:
             numPontosTuristicos == numPontosTuristicos2 ? "As cartas sao iguais. Houve empate" : "As cartas sao diferentes. Houve vitoria";
             if(numPontosTuristicos > numPontosTuristicos2) {
+                somaatributos += numPontosTuristicos;
+                somaatributos2 += numPontosTuristicos2;
                 printf("Carta 1 - %s: %i\n", nomedaCidade, numPontosTuristicos);
                 printf("Carta 2 - %s: %i\n", nomedaCidade2, numPontosTuristicos2);
                 printf("Carta 1 venceu no numero de pontos turisticos.\n\n");
             }else{
+                somaatributos += numPontosTuristicos;
+                somaatributos2 += numPontosTuristicos2;
                 printf("Carta 1 - %s: %i\n", nomedaCidade, numPontosTuristicos);
                 printf("Carta 2 - %s: %i\n", nomedaCidade2, numPontosTuristicos2);
                 printf("Carta 2 venceu no numero de pontos turisticos.\n\n");};
@@ -220,10 +240,14 @@ int main() {
         case 5:
             1/densidade == 1/densidade2 ? "As cartas sao iguais. Houve empate" : "As cartas sao diferentes. Houve vitoria";
             if((1/densidade) < (1/densidade2)) {
+                somaatributos += densidade_invertida;
+                somaatributos2 += densidade_invertida2;
                 printf("Carta 1 - %s: %.2f\n", nomedaCidade, densidade_invertida);
                 printf("Carta 2 - %s: %.2f\n", nomedaCidade2, densidade_invertida2);
                 printf("Carta 1 venceu na densidade.\n\n");
             }else{
+                somaatributos += densidade_invertida;
+                somaatributos2 += densidade_invertida2;
                 printf("Carta 1 - %s: %i\n", nomedaCidade, numPontosTuristicos);
                 printf("Carta 2 - %s: %i\n", nomedaCidade2, numPontosTuristicos2);
                 printf("Carta 2 venceu na densidade.\n\n");};
@@ -231,10 +255,14 @@ int main() {
         case 6:
             pib_per_capita == pib_per_capita2 ? "As cartas sao iguais. Houve empate" : "As cartas sao diferentes. Houve vitoria";
             if(pib_per_capita > pib_per_capita2) {
+                somaatributos += pib_per_capita;
+                somaatributos2 += pib_per_capita2;
                 printf("Carta 1 - %s: %.2f\n", nomedaCidade, pib_per_capita);
                 printf("Carta 2 - %s: %.2f\n", nomedaCidade2, pib_per_capita2);
                 printf("Carta 1 venceu no PIB per capita.\n\n");
             }else{
+                somaatributos += pib_per_capita;
+                somaatributos2 += pib_per_capita2;
                 printf("Carta 1 - %s: %.2f\n", nomedaCidade, pib_per_capita);
                 printf("Carta 2 - %s: %.2f\n", nomedaCidade2, pib_per_capita2);
                 printf("Carta 2 venceu no PIB per capita.\n\n");};
@@ -242,13 +270,17 @@ int main() {
         case 7:
             super_poder == super_poder2 ? "As cartas sao iguais. Houve empate" : "As cartas sao diferentes. Houve vitoria";
         if(super_poder > super_poder2) {
+            somaatributos += super_poder;
+            somaatributos2 += super_poder2;
             printf("Carta 1 - %s: %.2f\n", nomedaCidade, super_poder);
             printf("Carta 2 - %s: %.2f\n", nomedaCidade2, super_poder2);
             printf("Carta 1 venceu no super poder.\n\n");
         }else{
+            somaatributos += super_poder;
+            somaatributos2 += super_poder2;
             printf("Carta 1 - %s: %.2f\n", nomedaCidade, super_poder);
             printf("Carta 2 - %s: %.2f\n", nomedaCidade2, super_poder2);
-            printf("Carta 2 venceu no super poder.");
+            printf("Carta 2 venceu no super poder.\n\n");
             break;
         };
 
@@ -259,9 +291,21 @@ int main() {
         }
         
 
-            }
+    }
 
-
+    // Exibindo o resultado da comparação das duas cartas
+    printf("Resultado da comparacao das 2 cartas:\n");
+    if (somaatributos > somaatributos2) {
+        printf("Carta 1 venceu com um total de %lu pontos.\n", somaatributos);
+        printf("Carta 1 - %s: %lu pontos\n", nomedaCidade, somaatributos);
+        printf("Carta 2 - %s: %lu pontos\n", nomedaCidade2, somaatributos2);
+    } else if (somaatributos < somaatributos2) {
+        printf("Carta 2 venceu com um total de %lu pontos.\n", somaatributos2);
+        printf("Carta 1 - %s: %lu pontos\n", nomedaCidade, somaatributos);
+        printf("Carta 2 - %s: %lu pontos\n", nomedaCidade2, somaatributos2);
+    } else {
+        printf("Empate! Ambas as cartas tiveram %lu pontos.\n", somaatributos);
+    }
     return 0;
 
 
